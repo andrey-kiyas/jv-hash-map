@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.Objects;
+
 public class MyHashMap<K, V> implements MyMap<K, V> {
     private static final int INCREASE_FACTOR = 2;
     private static final int DEFAULT_CAPACITY = 16;
@@ -72,10 +74,11 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     }
 
     private boolean isEqualKeys(K key1, K key2) {
-        if (key1 == null) {
-            return key2 == null;
-        }
-        return key1.equals(key2);
+//        if (key1 == null) {
+//            return key2 == null;
+//        }
+//        return key1.equals(key2);
+        return Objects.equals(key1, key2);
     }
 
     private void resize() {
